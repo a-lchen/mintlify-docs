@@ -14,8 +14,8 @@
         "language": "en",
         "groups": [
           {
-            "group": "Getting Started",
-            "pages": ["en/overview", "en/quickstart", "en/development"]
+            "group": "Get Started",
+            "pages": ["introduction"]
           }
         ]
       },
@@ -24,7 +24,7 @@
         "groups": [
           {
             "group": "Getting Started",
-            "pages": ["es/overview", "es/quickstart", "es/development"]
+            "pages": ["quickstart"]
           }
         ]
       }
