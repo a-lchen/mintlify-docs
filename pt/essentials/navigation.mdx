@@ -1,0 +1,83 @@
+---
+title: Navegação
+description: O campo de navegação em docs.json define as páginas que vão no menu de navegação
+icon: map
+---
+
+O menu de navegação é a lista de links em cada site.
+
+Você provavelmente atualizará`docs.json` toda vez que adicionar uma nova página. As páginas não aparecem automaticamente.
+
+## Sintaxe de navegação
+
+Nossa sintaxe de navegação é recursiva, o que significa que você pode criar grupos de navegação aninhados. Você não precisa incluir`.mdx` nos nomes das páginas.
+
+<CodeGroup>
+  ```json Regular Navigation
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Docs",
+        "groups": [
+          {
+            "group": "Getting Started",
+            "pages": ["quickstart"]
+          }
+        ]
+      }
+    ]
+  }
+  ```
+
+  ```json Nested Navigation
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Docs",
+        "groups": [
+          {
+            "group": "Getting Started",
+            "pages": [
+              "quickstart",
+              {
+                "group": "Nested Reference Pages",
+                "pages": ["nested-reference-page"]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+  ```
+</CodeGroup>
+
+## Pastas
+
+Simplesmente coloque seus arquivos MDX em pastas e atualize os caminhos em`docs.json`.
+
+Por exemplo, para ter uma página em`https://yoursite.com/your-folder/your-page` você criaria uma pasta chamada`your-folder` contendo um arquivo MDX chamado`your-page.mdx`.
+
+<Warning>
+  Você não pode usar`api` para o nome de uma pasta, a menos que você a aninhe dentro de outra pasta. Mintlify usa Next.js, que reserva a pasta de nível superior`api` para chamadas internas do servidor. Um nome de pasta como`api-reference` seria aceito.
+</Warning>
+
+```json Navigation With Folder
+"navigation": {
+  "tabs": [
+    {
+      "tab": "Docs",
+      "groups": [
+        {
+          "group": "Group Name",
+          "pages": ["your-folder/your-page"]
+        }
+      ]
+    }
+  ]
+}
+```
+
+## Páginas Ocultas
+
+Arquivos MDX não incluídos em`docs.json` não aparecerão na barra lateral, mas são acessíveis através da barra de pesquisa e vinculando diretamente a eles.
