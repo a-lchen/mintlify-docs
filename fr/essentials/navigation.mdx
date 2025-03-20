@@ -1,0 +1,83 @@
+---
+title: Navigation
+description: Le champ navigation dans docs.json définit les pages qui vont dans le menu de navigation
+icon: map
+---
+
+Le menu de navigation est la liste des liens sur chaque site web.
+
+Vous devrez probablement mettre à jour`docs.json` chaque fois que vous ajoutez une nouvelle page. Les pages n'apparaissent pas automatiquement.
+
+## Syntaxe de navigation
+
+Notre syntaxe de navigation est récursive, ce qui signifie que vous pouvez créer des groupes de navigation imbriqués. Vous n'avez pas besoin d'inclure`.mdx` dans les noms de pages.
+
+<CodeGroup>
+  ```json Regular Navigation
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Docs",
+        "groups": [
+          {
+            "group": "Getting Started",
+            "pages": ["quickstart"]
+          }
+        ]
+      }
+    ]
+  }
+  ```
+
+  ```json Nested Navigation
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Docs",
+        "groups": [
+          {
+            "group": "Getting Started",
+            "pages": [
+              "quickstart",
+              {
+                "group": "Nested Reference Pages",
+                "pages": ["nested-reference-page"]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+  ```
+</CodeGroup>
+
+## Dossiers
+
+Il suffit de mettre vos fichiers MDX dans des dossiers et de mettre à jour les chemins dans`docs.json`.
+
+Par exemple, pour avoir une page à`https://yoursite.com/your-folder/your-page` vous devriez créer un dossier appelé`your-folder` contenant un fichier MDX appelé`your-page.mdx`.
+
+<Warning>
+  Vous ne pouvez pas utiliser`api` pour le nom d'un dossier sauf si vous le nidifiez dans un autre dossier. Mintlify utilise Next.js qui réserve le dossier de premier niveau`api` pour les appels serveur internes. Un nom de dossier comme`api-reference` serait accepté.
+</Warning>
+
+```json Navigation With Folder
+"navigation": {
+  "tabs": [
+    {
+      "tab": "Docs",
+      "groups": [
+        {
+          "group": "Group Name",
+          "pages": ["your-folder/your-page"]
+        }
+      ]
+    }
+  ]
+}
+```
+
+## Pages cachées
+
+Les fichiers MDX non inclus dans`docs.json` n'apparaîtront pas dans la barre latérale mais sont accessibles via la barre de recherche et en les liant directement.
