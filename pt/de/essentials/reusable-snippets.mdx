@@ -1,0 +1,102 @@
+---
+title: Snippets Reutilizáveis
+description: Snippets personalizados reutilizáveis para manter o conteúdo sincronizado
+icon: recycle
+---
+
+import SnippetIntro from '/snippets/snippet-intro.mdx';
+
+<SnippetIntro />
+
+## Criando um Snippet Personalizado
+
+**Pré-requisito**: Você deve criar seu arquivo de snippet no`snippets`diretório.
+
+<Note>
+  Cada página no`snippets`diretório é tratada como um snippet e não é renderizada como uma página independente. Se você quiser criar uma página independente a partir do snippet, importe o snippet em outro arquivo e chame-o como um componente.
+</Note>
+
+### Exportação Padrão
+
+1. Adicione conteúdo ao seu arquivo de snippet que você deseja reutilizar em vários lugares. Opcionalmente, você pode adicionar variáveis que podem ser preenchidas através de props ao importar o snippet.
+
+```mdx snippets/my-snippet.mdx
+Hello world! This is my content I want to reuse across pages. My keyword of the
+day is {word}.
+```
+
+<Warning>
+  O conteúdo que você deseja reutilizar deve estar no`snippets`diretório para que a importação funcione.
+</Warning>
+
+2. Importe o snippet em seu arquivo de destino.
+
+```mdx destination-file.mdx
+---
+title: My title
+description: My Description
+---
+
+import MySnippet from '/snippets/path/to/my-snippet.mdx';
+
+## Header
+
+Lorem impsum dolor sit amet.
+
+<MySnippet word="bananas" />
+```
+
+### Variáveis Reutilizáveis
+
+1. Exporte uma variável do seu arquivo de snippet:
+
+```mdx snippets/path/to/custom-variables.mdx
+export const myName = 'my name';
+
+export const myObject = { fruit: 'strawberries' };
+```
+
+2. Importe o snippet do seu arquivo de destino e use a variável:
+
+```mdx destination-file.mdx
+---
+title: My title
+description: My Description
+---
+
+import { myName, myObject } from '/snippets/path/to/custom-variables.mdx';
+
+Hello, my name is {myName} and I like {myObject.fruit}.
+```
+
+### Componentes Reutilizáveis
+
+1. Crie um componente em seu arquivo de snippet que aceita props exportando seu componente como uma função de seta.
+
+```mdx snippets/custom-component.mdx
+export const MyComponent = ({ title }) => (
+  <div>
+    <h1>{title}</h1>
+    <p>... snippet content ...</p>
+  </div>
+);
+```
+
+<Warning>
+  MDX não é compilado no corpo de uma função de seta. Mantenha-se na sintaxe HTML quando possível ou use uma exportação padrão se precisar de MDX.
+</Warning>
+
+2. Importe o snippet em seu arquivo de destino e passe as props
+
+```mdx destination-file.mdx
+---
+title: My title
+description: My Description
+---
+
+import { MyComponent } from '/snippets/custom-component.mdx';
+
+Lorem ipsum dolor sit amet.
+
+<MyComponent title={'Custom title'} />
+```

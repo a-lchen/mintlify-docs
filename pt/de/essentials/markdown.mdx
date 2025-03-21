@@ -1,0 +1,86 @@
+---
+title: 'Sintaxe Markdown'
+description: 'Texto, títulos e formatação em Markdown padrão'
+icon: 'text-size'
+---
+
+## Títulos
+
+Melhor usado para títulos de seção.
+
+```md
+## Titles
+```
+
+### Subtítulos
+
+Melhor usado para títulos de subseção.
+
+```md
+### Subtitles
+```
+
+<Tip>
+  Cada**título**e**subtítulo**cria uma âncora e também aparece na tabela de conteúdo à direita.
+</Tip>
+
+## Formatação de Texto
+
+Suportamos a maioria das formatações Markdown. Simplesmente adicione`**`,`_`, ou`~`ao redor do texto para formatá-lo.
+
+| Estilo  | Como escrever     | Resultado   |
+| ------- | ----------------- | ----------- |
+| Negrito | `**bold**`        | **negrito** |
+| Itálico | `_italic_`        | *itálico*   |
+| Tachado | `~strikethrough~` | ~~tachado~~ |
+
+Você pode combiná-los. Por exemplo, escreva`**_bold and italic_**`par&#x61;***negrito e itálico***.
+
+Você precisa usar HTML para escrever texto sobrescrito e subscrito. Ou seja, adicione`<sup>`ou`<sub>`ao redor do seu texto.
+
+| Tamanho do texto | Como escrever            | Resultado              |
+| ---------------- | ------------------------ | ---------------------- |
+| Sobrescrito      | `<sup>superscript</sup>` | <sup>sobrescrito</sup> |
+| Subscrito        | `<sub>subscript</sub>`   | <sub>subscrito</sub>   |
+
+## Vinculando páginas
+
+Você pode criar um link envolvendo texto em`[]()`. Você escreveria`[link to google](https://google.com)` para[criar um link para o Google](https://google.com).
+
+Links para páginas em sua documentação devem ser relativos à raiz. Basicamente, você precisa incluir todo o caminho da pasta. Por exemplo,`[link to text](/writing-content/text)`vincula à página "Texto" em nossa seção de componentes.
+
+Links relativos como`[link to text](../text)`carregam mais lentamente porque não podemos otimizá-los tão facilmente.
+
+## Citações em bloco
+
+### Linha única
+
+Para criar uma citação em bloco, adicione um`>`antes de um parágrafo.
+
+> Dorothy a seguiu por muitas das belas salas em seu castelo.
+
+```md
+> Dorothy followed her through many of the beautiful rooms in her castle.
+```
+
+### Múltiplas linhas
+
+> Dorothy a seguiu por muitas das belas salas em seu castelo.
+>
+> A bruxa ordenou que ela limpasse as panelas e caldeirões, varresse o chão e mantivesse o fogo abastecido com lenha.
+
+```md
+> Dorothy followed her through many of the beautiful rooms in her castle.
+>
+> The Witch bade her clean the pots and kettles and sweep the floor and keep the fire fed with wood.
+```
+
+### LaTeX
+
+Mintlify suporta[LaTeX](https://www.latex-project.org)através do componente Latex.
+
+<Latex>8 x (vk x H1 - H2) = (0,1)</Latex>
+
+```md
+<Latex>8 x (vk x H1 - H2) = (0,1)</Latex>
+```
