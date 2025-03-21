@@ -1,0 +1,86 @@
+---
+title: Sintaxe Markdown
+description: Texto, título e estilização em markdown padrão
+icon: text-size
+---
+
+## Títulos
+
+Melhor usado para cabeçalhos de seção.
+
+```md
+## Titles
+```
+
+### Subtítulos
+
+Melhor uso para cabeçalhos de subseção.
+
+```md
+### Subtitles
+```
+
+<Tip>
+  Cada**título**e**subtítulo**cria uma âncora e também aparece no sumário à direita.
+</Tip>
+
+## Formatação de Texto
+
+Suportamos a maioria das formatações markdown. Simplesmente adicione`**`,`_`, ou`~`ao redor do texto para formatá-lo.
+
+| Estilo  | Como escrever     | Resultado   |
+| ------- | ----------------- | ----------- |
+| Negrito | `**bold**`        | **negrito** |
+| Itálico | `_italic_`        | *itálico*   |
+| Tachado | `~strikethrough~` | ~~tachado~~ |
+
+Você pode combinar estes. Por exemplo, escreva`**_bold and italic_**`para obte&#x72;***negrito e itálico***&#x74;exto.
+
+Você precisa usar HTML para escrever texto em sobrescrito e subscrito. Ou seja, adicione`<sup>`ou`<sub>`ao redor do seu texto.
+
+| Tamanho do Texto | Como escrever            | Resultado              |
+| ---------------- | ------------------------ | ---------------------- |
+| Sobrescrito      | `<sup>superscript</sup>` | <sup>sobrescrito</sup> |
+| Subscrito        | `<sub>subscript</sub>`   | <sub>subscrito</sub>   |
+
+## Vinculando Páginas
+
+Você pode adicionar um link envolvendo o texto em`[]()`. Você escreveria`[link to google](https://google.com)`para[link para o google](https://google.com).
+
+Links para páginas em sua documentação precisam ser relativos à raiz. Basicamente, você deve incluir todo o caminho da pasta. Por exemplo,`[link to text](/writing-content/text)`links para a página "Texto" em nossa seção de componentes.
+
+Links relativos como`[link to text](../text)`abrirão mais lentamente porque não podemos otimizá-los tão facilmente.
+
+## Citações em Bloco
+
+### Linha Única
+
+Para criar uma citação em bloco, adicione um`>`na frente de um parágrafo.
+
+> Dorothy a seguiu por muitos dos belos quartos em seu castelo.
+
+```md
+> Dorothy followed her through many of the beautiful rooms in her castle.
+```
+
+### Múltiplas Linhas
+
+> Dorothy a seguiu por muitos dos belos quartos em seu castelo.
+>
+> A Bruxa ordenou que ela limpasse as panelas e chaleiras, varresse o chão e mantivesse o fogo alimentado com lenha.
+
+```md
+> Dorothy followed her through many of the beautiful rooms in her castle.
+>
+> The Witch bade her clean the pots and kettles and sweep the floor and keep the fire fed with wood.
+```
+
+### LaTeX
+
+Mintlify suporta[LaTeX](https://www.latex-project.org)através do componente Latex.
+
+<Latex>8 x (vk x H1 - H2) = (0,1)</Latex>
+
+```md
+<Latex>8 x (vk x H1 - H2) = (0,1)</Latex>
+```
