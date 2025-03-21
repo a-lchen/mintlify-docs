@@ -1,0 +1,102 @@
+---
+title: Sviluppo
+description: Anteprima delle modifiche in locale per aggiornare la tua documentazione
+---
+
+<Info>
+  **Prerequisito**: Si prega di installare Node.js (versione 19 o superiore) prima di procedere.<br />
+
+  Si prega di aggiornare a`docs.json` prima di procedere ed eliminare il file obsoleto`mint.json`.
+</Info>
+
+Segui questi passaggi per installare ed eseguire Mintlify sul tuo sistema operativo:
+
+**Passo 1**: Installa Mintlify:
+
+<CodeGroup>
+  ```bash npm
+  npm i -g mintlify
+  ```
+
+  ```bash yarn
+  yarn global add mintlify
+  ```
+</CodeGroup>
+
+**Passo 2**: Naviga nella directory della documentazione (dove si trova il file`docs.json`) ed esegui il seguente comando:
+
+```bash
+mintlify dev
+```
+
+Un'anteprima locale della tua documentazione sarà disponibile su`http://localhost:3000`.
+
+### Porte Personalizzate
+
+Per impostazione predefinita, Mintlify utilizza la porta 3000. Puoi personalizzare la porta su cui Mintlify viene eseguito usando il flag`--port`. Per esempio, per eseguire Mintlify sulla porta 3333, usa questo comando:
+
+```bash
+mintlify dev --port 3333
+```
+
+Se tenti di eseguire Mintlify su una porta già in uso, verrà utilizzata la prossima porta disponibile:
+
+```md
+Port 3000 is already in use. Trying 3001 instead.
+```
+
+## Versioni di Mintlify
+
+Si prega di notare che ogni versione della CLI è associata a una specifica versione di Mintlify. Se il tuo sito locale non corrisponde alla versione in produzione, aggiorna la CLI:
+
+<CodeGroup>
+  ```bash npm
+  npm i -g mintlify@latest
+  ```
+
+  ```bash yarn
+  yarn global upgrade mintlify
+  ```
+</CodeGroup>
+
+## Verifica dei Collegamenti
+
+La CLI può aiutare a verificare i collegamenti di riferimento nella tua documentazione. Per identificare i collegamenti non funzionanti, usa il seguente comando:
+
+```bash
+mintlify broken-links
+```
+
+## Distribuzione
+
+<Tip>
+  Editor illimitati disponibili nel[Piano Pro](https://mintlify.com/pricing)e superiori.
+</Tip>
+
+Se la distribuzione ha successo, dovresti vedere quanto segue:
+
+<Frame>
+  <img src="/images/checks-passed.png" style={{ borderRadius: '0.5rem' }} />
+</Frame>
+
+## Formattazione del codice
+
+Raccomandiamo l'uso di estensioni nel tuo IDE per il rilevamento e la formattazione di MDX. Se sei un utente di VSCode, considera l'[estensione MDX VSCode](https://marketplace.visualstudio.com/items?itemName=unifiedjs.vscode-mdx) per l'evidenziazione della sintassi e [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) per la formattazione del codice.
+
+## Risoluzione dei problemi
+
+<AccordionGroup>
+  <Accordion title="Error: Could not load the &#x22;sharp&#x22; module using the darwin-arm64 runtime">
+    Questo potrebbe essere dovuto a una versione obsoleta di Node. Prova quanto segue:
+
+    1. Rimuovi la versione attualmente installata di Mintlify: `npm remove -g mintlify`
+    2. Aggiorna a Node v19 o superiore.
+    3. Reinstalla Mintlify: `npm install -g mintlify`
+  </Accordion>
+
+  <Accordion title="Issue: Encountering an unknown error">
+    Soluzione: Vai alla directory root del tuo dispositivo ed elimina la cartella \~/.mintlify. Dopo, esegui `mintlify dev` di nuovo.
+  </Accordion>
+</AccordionGroup>
+
+Curioso di sapere cosa è cambiato nella versione CLI? [Dai un'occhiata al changelog della CLI.](https://www.npmjs.com/package/mintlify?activeTab=versions)

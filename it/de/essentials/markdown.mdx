@@ -1,0 +1,86 @@
+---
+title: 'Sintassi Markdown'
+description: 'Testo, titoli e formattazione in Markdown standard'
+icon: 'text-size'
+---
+
+## Titoli
+
+Utilizzati al meglio per i titoli delle sezioni.
+
+```md
+## Titles
+```
+
+### Sottotitoli
+
+Utilizzati al meglio per i titoli delle sottosezioni.
+
+```md
+### Subtitles
+```
+
+<Tip>
+  Ogni**titolo**e**sottotitolo**crea un'ancora e appare anche nella tabella dei contenuti sulla destra.
+</Tip>
+
+## Formattazione del testo
+
+Supportiamo la maggior parte delle formattazioni Markdown. Basta aggiungere`**`,`_`, o `~` intorno al testo per formattarlo.
+
+| Stile     | Come scriverlo    | Risultato     |
+| --------- | ----------------- | ------------- |
+| Grassetto | `**bold**`        | **grassetto** |
+| Corsivo   | `_italic_`        | *corsivo*     |
+| Barrato   | `~strikethrough~` | ~~barrato~~   |
+
+Puoi combinarli. Per esempio, scrivi `**_bold and italic_**` per ***grassetto e corsivo*** testo.
+
+Devi usare HTML per scrivere testo in apice e pedice. Cioè, aggiungi `<sup>` o `<sub>` intorno al tuo testo.
+
+| Dimensione testo | Come scriverlo           | Risultato         |
+| ---------------- | ------------------------ | ----------------- |
+| Apice            | `<sup>superscript</sup>` | <sup>apice</sup>  |
+| Pedice           | `<sub>subscript</sub>`   | <sub>pedice</sub> |
+
+## Collegamento alle pagine
+
+Puoi creare un link racchiudendo il testo in`[]()`. Scriveresti`[link to google](https://google.com)` per[collegarti a Google](https://google.com).
+
+I link alle pagine nella tua documentazione devono essere relativi alla root. In sostanza, devi specificare l'intero percorso della cartella. Per esempio,`[link to text](/writing-content/text)`si collega alla pagina "Text" nella nostra sezione componenti.
+
+Link relativi come`[link to text](../text)`si apriranno più lentamente poiché non possiamo ottimizzarli facilmente.
+
+## Citazioni
+
+### Singola riga
+
+Per creare una citazione, aggiungi un`>`prima di un paragrafo.
+
+> Dorothy la seguì attraverso molte delle bellissime stanze del suo castello.
+
+```md
+> Dorothy followed her through many of the beautiful rooms in her castle.
+```
+
+### Più righe
+
+> Dorothy la seguì attraverso molte delle bellissime stanze del suo castello.
+>
+> La strega le ordinò di pulire le pentole e i calderoni, spazzare il pavimento e alimentare il fuoco con la legna.
+
+```md
+> Dorothy followed her through many of the beautiful rooms in her castle.
+>
+> The Witch bade her clean the pots and kettles and sweep the floor and keep the fire fed with wood.
+```
+
+### LaTeX
+
+Mintlify supporta[LaTeX](https://www.latex-project.org)attraverso il componente Latex.
+
+<Latex>8 x (vk x H1 - H2) = (0,1)</Latex>
+
+```md
+<Latex>8 x (vk x H1 - H2) = (0,1)</Latex>
+```

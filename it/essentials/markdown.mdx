@@ -1,0 +1,86 @@
+---
+title: Sintassi Markdown
+description: Testo, titolo e stile in markdown standard
+icon: text-size
+---
+
+## Titoli
+
+Utilizzati al meglio per le intestazioni delle sezioni.
+
+```md
+## Titles
+```
+
+### Sottotitoli
+
+Utilizzati al meglio per le intestazioni delle sottosezioni.
+
+```md
+### Subtitles
+```
+
+<Tip>
+  Ogni **titolo** e **sottotitolo** crea un'ancora e appare anche nell'indice a destra.
+</Tip>
+
+## Formattazione del Testo
+
+Supportiamo la maggior parte della formattazione markdown. Basta aggiungere `**`, `_`, o `~` intorno al testo per formattarlo.
+
+| Stile     | Come scriverlo    | Risultato     |
+| --------- | ----------------- | ------------- |
+| Grassetto | `**bold**`        | **grassetto** |
+| Corsivo   | `_italic_`        | *corsivo*     |
+| Barrato   | `~strikethrough~` | ~~barrato~~   |
+
+Puoi combinarli. Per esempio, scrivi `**_bold and italic_**` per ottenere ***grassetto e corsivo*** testo.
+
+Devi usare HTML per scrivere testo in apice e pedice. Cioè, aggiungi `<sup>` o `<sub>` intorno al tuo testo.
+
+| Dimensione del Testo | Come scriverlo           | Risultato         |
+| -------------------- | ------------------------ | ----------------- |
+| Apice                | `<sup>superscript</sup>` | <sup>apice</sup>  |
+| Pedice               | `<sub>subscript</sub>`   | <sub>pedice</sub> |
+
+## Collegamenti alle Pagine
+
+Puoi aggiungere un collegamento avvolgendo il testo in `[]()`. Dovresti scrivere `[link to google](https://google.com)` per [collegarti a google](https://google.com).
+
+I collegamenti alle pagine nella tua documentazione devono essere relativi alla radice. In pratica, devi includere l'intero percorso della cartella. Per esempio, `[link to text](/writing-content/text)` si collega alla pagina "Testo" nella nostra sezione componenti.
+
+Collegamenti relativi come `[link to text](../text)` si apriranno più lentamente perché non possiamo ottimizzarli facilmente.
+
+## Citazioni
+
+### Singola riga
+
+Per creare una citazione, aggiungi un `>` davanti a un paragrafo.
+
+> Dorothy la seguì attraverso molte delle bellissime stanze del suo castello.
+
+```md
+> Dorothy followed her through many of the beautiful rooms in her castle.
+```
+
+### Multiriga
+
+> Dorothy la seguì attraverso molte delle bellissime stanze del suo castello.
+>
+> La Strega le ordinò di pulire le pentole e i bollitori, spazzare il pavimento e mantenere il fuoco alimentato con la legna.
+
+```md
+> Dorothy followed her through many of the beautiful rooms in her castle.
+>
+> The Witch bade her clean the pots and kettles and sweep the floor and keep the fire fed with wood.
+```
+
+### LaTeX
+
+Mintlify supporta [LaTeX](https://www.latex-project.org) attraverso il componente Latex.
+
+<Latex>8 x (vk x H1 - H2) = (0,1)</Latex>
+
+```md
+<Latex>8 x (vk x H1 - H2) = (0,1)</Latex>
+```
