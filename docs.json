@@ -78,6 +78,17 @@
             ]
           }
         ]
+      },
+      {
+        "language": "pt",
+        "groups": [
+          {
+            "group": "Get Started",
+            "pages": [
+              "pt/introduction"
+            ]
+          }
+        ]
       }
     ]
   },
