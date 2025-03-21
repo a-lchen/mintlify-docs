@@ -1,0 +1,102 @@
+---
+title: Extraits Réutilisables
+description: Extraits personnalisés réutilisables pour maintenir le contenu synchronisé
+icon: recycle
+---
+
+import SnippetIntro from '/snippets/snippet-intro.mdx';
+
+<SnippetIntro />
+
+## Créer un extrait personnalisé
+
+**Prérequis**: Vous devez créer votre fichier d'extrait dans le`snippets`répertoire.
+
+<Note>
+  Chaque page dans le`snippets`répertoire est traitée comme un extrait et n'est pas rendue comme une page autonome. Si vous souhaitez créer une page autonome à partir de l'extrait, importez l'extrait dans un autre fichier et appelez-le comme un composant.
+</Note>
+
+### Export par défaut
+
+1. Ajoutez à votre fichier d'extrait le contenu que vous souhaitez réutiliser à plusieurs endroits. En option, vous pouvez ajouter des variables qui seront remplies via des props lors de l'importation de l'extrait.
+
+```mdx snippets/my-snippet.mdx
+Hello world! This is my content I want to reuse across pages. My keyword of the
+day is {word}.
+```
+
+<Warning>
+  Le contenu que vous souhaitez réutiliser doit se trouver dans le`snippets`répertoire pour que l'importation fonctionne.
+</Warning>
+
+2. Importez l'extrait dans votre fichier cible.
+
+```mdx destination-file.mdx
+---
+title: My title
+description: My Description
+---
+
+import MySnippet from '/snippets/path/to/my-snippet.mdx';
+
+## Header
+
+Lorem impsum dolor sit amet.
+
+<MySnippet word="bananas" />
+```
+
+### Variables réutilisables
+
+1. Exportez une variable depuis votre fichier d'extrait :
+
+```mdx snippets/path/to/custom-variables.mdx
+export const myName = 'my name';
+
+export const myObject = { fruit: 'strawberries' };
+```
+
+2. Importez l'extrait depuis votre fichier cible et utilisez la variable :
+
+```mdx destination-file.mdx
+---
+title: My title
+description: My Description
+---
+
+import { myName, myObject } from '/snippets/path/to/custom-variables.mdx';
+
+Hello, my name is {myName} and I like {myObject.fruit}.
+```
+
+### Composants réutilisables
+
+1. Créez un composant qui accepte des props dans votre fichier d'extrait en exportant votre composant sous forme de fonction fléchée.
+
+```mdx snippets/custom-component.mdx
+export const MyComponent = ({ title }) => (
+  <div>
+    <h1>{title}</h1>
+    <p>... snippet content ...</p>
+  </div>
+);
+```
+
+<Warning>
+  MDX ne se compile pas dans le corps d'une fonction fléchée. Restez-en à la syntaxe HTML si possible ou utilisez un export par défaut si vous avez besoin de MDX.
+</Warning>
+
+2. Importez l'extrait dans votre fichier cible et passez les props
+
+```mdx destination-file.mdx
+---
+title: My title
+description: My Description
+---
+
+import { MyComponent } from '/snippets/custom-component.mdx';
+
+Lorem ipsum dolor sit amet.
+
+<MyComponent title={'Custom title'} />
+```
