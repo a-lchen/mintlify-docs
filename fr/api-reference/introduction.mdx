@@ -1,0 +1,29 @@
+---
+title: Introduction
+description: Section exemple pour présenter les points de terminaison API
+---
+
+<Note>
+  Si vous ne souhaitez pas créer de documentation de référence API, vous pouvez
+  supprimer cette section en supprimant le dossier api-reference.
+</Note>
+
+## Bienvenue
+
+Il existe deux façons de créer une documentation API : [OpenAPI](https://mintlify.com/docs/api-playground/openapi/setup) et [composants MDX](https://mintlify.com/docs/api-playground/mdx/configuration). Pour le kit de démarrage, nous utilisons la spécification OpenAPI suivante.
+
+<Card title="Plant Store Endpoints" icon="leaf" href="https://github.com/mintlify/starter/blob/main/api-reference/openapi.json">
+  Voir le fichier de spécification OpenAPI
+</Card>
+
+## Authentification
+
+Tous les points de terminaison API sont authentifiés à l'aide de jetons Bearer et sont repris du fichier de spécification.
+
+```json
+"security": [
+  {
+    "bearerAuth": []
+  }
+]
+```
