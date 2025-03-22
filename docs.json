@@ -78,6 +78,17 @@
             ]
           }
         ]
+      },
+      {
+        "language": "cn",
+        "groups": [
+          {
+            "group": "Get Started",
+            "pages": [
+              "cn/introduction"
+            ]
+          }
+        ]
       }
     ]
   },

@@ -1,0 +1,69 @@
+---
+title: 快速入门
+description: 在5分钟内开始构建出色的文档
+---
+
+## 设置您的开发环境
+
+了解如何在本地更新文档并将其部署到公共环境。
+
+### 编辑和预览
+
+<AccordionGroup>
+  <Accordion icon="github" title="Clone your docs locally">
+    在入门过程中，我们在您的 Github 上创建了一个包含文档内容的仓库。您可以在我们的[仪表板](https://dashboard.mintlify.com)中找到这个仓库。要在本地克隆仓库，请按照这些[说明](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
+    在您的终端中操作。
+  </Accordion>
+
+  <Accordion icon="rectangle-terminal" title="Preview changes">
+    预览功能帮助您确保更改的效果符合预期。我们构建了一个命令行界面来在本地渲染这些更改。
+
+    1. 安装[Mintlify CLI](https://www.npmjs.com/package/mintlify)以使用此命令在本地预览文档更改：`npm i -g mintlify`
+    2. 在文档的根目录（其中有`docs.json`是)：`mintlify dev`
+
+    <Note>
+      如果您目前正在使用旧版的`mint.json`配置文件，请更新 Mintlify CLI：
+
+      `npm i -g mintlify@latest`
+      并在您的文档仓库中运行新的升级命令：
+
+      `mintlify upgrade`
+      您现在应该正在使用新的`docs.json`配置文件。您可以删除`mint.json`文件从您的仓库中。
+    </Note>
+  </Accordion>
+</AccordionGroup>
+
+### 部署您的更改
+
+<AccordionGroup>
+  <Accordion icon="message-bot" title="Install our Github app">
+    我们的Github应用程序会自动将您的更改部署到您的文档网站，因此您不需要自己管理部署。您可以在您的[控制面板](https://dashboard.mintlify.com)上找到安装链接。一旦机器人安装成功，仓库的提交哈希值旁边应该会有一个对勾标记。
+  </Accordion>
+
+  <Accordion icon="rocket" title="Push your changes">
+    [提交并推送您的更改到Git](https://docs.github.com/en/get-started/using-git/pushing-commits-to-a-remote-repository#about-git-push)
+    以更新您的文档网站。如果您推送后没有看到Github应用程序成功部署您的更改，您也可以通过我们的[控制面板](https://dashboard.mintlify.com)手动更新您的文档。
+  </Accordion>
+</AccordionGroup>
+
+## 更新您的文档
+
+使用MDX语法和React组件直接在您的文件中添加内容。您可以使用我们的任何组件，甚至可以构建自己的组件。
+
+<CardGroup>
+  <Card title="Add Content With MDX" icon="file" href="/essentials/markdown">
+    使用MDX语法向您的文档添加内容。
+  </Card>
+
+  <Card title="Add Code Blocks" icon="square-code" href="/essentials/code">
+    直接在您的文档中添加带有语法高亮的代码。
+  </Card>
+
+  <Card title="Add Images" icon="image" href="/essentials/images">
+    在您的文档中添加图片，使其更具吸引力。
+  </Card>
+
+  <Card title="Add Custom Components" icon="puzzle-piece" href="/essentials/reusable-snippets">
+    在您的文档中添加模板，使其更易于重用。
+  </Card>
+</CardGroup>
