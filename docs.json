@@ -67,17 +67,6 @@
             ]
           }
         ]
-      },
-      {
-        "language": "de",
-        "groups": [
-          {
-            "group": "Get Started",
-            "pages": [
-              "de/introduction"
-            ]
-          }
-        ]
       }
     ]
   },
