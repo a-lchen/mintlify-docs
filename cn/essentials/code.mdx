@@ -1,0 +1,37 @@
+---
+title: 代码块
+description: 显示内联代码和代码块
+icon: code
+---
+
+## 基础 基础 测试 测试 测试
+
+### 内联代码
+
+表示一个`word` `phrase`作为代码，用反引号 (\`) 包起来。
+
+```
+To denote a `word` or `phrase` as code, enclose it in backticks (`).
+```
+
+### 代码块
+
+使用[代码块](https://www.markdownguide.org/extended-syntax/#fenced-code-blocks)通过将代码放在三个反引号中，并在前面的反引号后面跟上代码段的编程语言，以获得语法高亮显示。可选地，您还可以在编程语言后写上您的代码名称。
+
+```java HelloWorld.java
+class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
+```
+
+````md
+```java HelloWorld.java
+class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
+```
+````

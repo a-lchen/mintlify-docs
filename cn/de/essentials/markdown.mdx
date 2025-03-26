@@ -1,0 +1,86 @@
+---
+title: Markdown 语法
+description: 文本、标题和标准Markdown格式
+icon: text-size
+---
+
+## 标题
+
+最适用于章节标题。
+
+```md
+## Titles
+```
+
+### 副标题
+
+最适合用于小节标题。
+
+```md
+### Subtitles
+```
+
+<Tip>
+  每一个**标题** 和 **字幕**创建一个锚点，并且也会出现在右侧的目录中。
+</Tip>
+
+## 文本格式
+
+我们支持大多数Markdown格式。只需添加`**`，`_`，或`~`在文本周围，进行格式化。
+
+| 风格  | 如何编写              | 结果      |
+| --- | ----------------- | ------- |
+| 粗体  | `**bold**`        | **加粗**  |
+| 斜体  | `_italic_`        | *斜体*    |
+| 删除线 | `~strikethrough~` | ~~删除线~~ |
+
+您可以将它们结合使用。例如，您可以写`**_bold and italic_**` um ***加粗和斜体***&#x83B7;取文本。
+
+您需要使用 HTML 来编写上标和下标文本。也就是说，添加`<sup>`或者`<sub>`在您的文本周围。
+
+| 文字大小 | 如何书写                     | 结果            |
+| ---- | ------------------------ | ------------- |
+| 上标   | `<sup>superscript</sup>` | <sup>上标</sup> |
+| 下标   | `<sub>subscript</sub>`   | <sub>下标</sub> |
+
+## 链接到页面
+
+您可以通过将文本放入`[]()`。 您将`[link to google](https://google.com)` 写[链接到谷歌](https://google.com)。
+
+您文档中页面的链接必须是根相对的。基本上，您需要提供完整的文件夹路径。例如，`[link to text](/writing-content/text)`链接到我们组件部分的“文本”页面。
+
+例如相对链接`[link to text](../text)`因为我们不容易优化它们，所以打开速度较慢。
+
+## 块引用
+
+### 单行
+
+要创建块引用，添加一个`>`在段落前面。
+
+> 桃乐丝跟随她走过她城堡中许多漂亮的房间。
+
+```md
+> Dorothy followed her through many of the beautiful rooms in her castle.
+```
+
+### 多行
+
+> Dorothy 跟随她穿过城堡中许多美丽的房间。
+>
+> 女巫命令她清洗锅碗瓢盆，打扫地板，并用木材维持火势。
+
+```md
+> Dorothy followed her through many of the beautiful rooms in her castle.
+>
+> The Witch bade her clean the pots and kettles and sweep the floor and keep the fire fed with wood.
+```
+
+### LaTeX
+
+Mintlify 支持[LaTeX](https://www.latex-project.org)通过 Latex 组件。
+
+<Latex>8 x (vk x H1 - H2) = (0,1)</Latex>
+
+```md
+<Latex>8 x (vk x H1 - H2) = (0,1)</Latex>
+```
